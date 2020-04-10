@@ -16,10 +16,6 @@ class Ball;
 class Hittable : public QGraphicsItem {
 public:
   virtual void processBall(Ball& ball) = 0;
-
-protected:
-  QRectF boundingRect() const = 0;
-  void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) = 0;
 };
 
 class Ball : public Hittable {
@@ -33,8 +29,6 @@ class Ball : public Hittable {
 protected:
   QRectF boundingRect() const;
   void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-
-  void advance(int phase) override;
 
 public:
   QPointF center() const { return _center; }

@@ -146,13 +146,6 @@ void Ball::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
   Q_UNUSED(widget);
 }
 
-void Ball::advance(int phase) {
-  if (phase != 0) {
-    move();
-    setPos(flipY(center()));
-  }
-}
-
 QPainterPath Ball::shape() const {
   QPainterPath path;
   path.addEllipse(QPointF(0, 0), _radius, _radius);
