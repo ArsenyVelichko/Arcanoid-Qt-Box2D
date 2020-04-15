@@ -12,8 +12,8 @@ static void AabbVsBallIntersect(const Ball& ball, const QRectF& bbox, HitRecord&
   double halfWidth = bbox.width() / 2;
   double halfHeight = bbox.height() / 2;
 
-  closestPoint.setX(clamp<double>(closestPoint.x(), -halfWidth, halfWidth));
-  closestPoint.setY(clamp<double>(closestPoint.y(), -halfHeight, halfHeight));
+  closestPoint.setX(clamp(closestPoint.x(), -halfWidth, halfWidth));
+  closestPoint.setY(clamp(closestPoint.y(), -halfHeight, halfHeight));
 
   bool isInside = false;
   if (closestPoint == mappedCenter) {
