@@ -3,7 +3,7 @@
 #include <fstream>
 
 Arcanoid::Arcanoid(QWidget *parent)
-	: QMainWindow(parent), _ui(new Ui::ArcanoidClass) {
+ : QMainWindow(parent), _ui(new Ui::ArcanoidClass) {
 	_ui->setupUi(this);
   setWindowFlags(Qt::Window
     | Qt::WindowMinimizeButtonHint
