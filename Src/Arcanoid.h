@@ -4,10 +4,6 @@
 #include "ui_Arcanoid.h"
 #include <QGraphicsView>
 
-namespace Ui {
-  class Widget;
-}
-
 class Arcanoid : public QMainWindow
 {
 	Q_OBJECT
