@@ -173,7 +173,7 @@ static QVector2D correctDirection(const Ball* ball) {
   double maxY = currDirect.y() > 0 ? 1 : -1;
 
   double newY = currDirect.y() + 0.2 * pow(maxY - currDirect.y(), 3);
-  double newX = (1 - newY * newY) * sgn(currDirect.x());
+  double newX = sqrt((1 - newY * newY)) * sgn(currDirect.x());
 
   return QVector2D(newX, newY);
 }
