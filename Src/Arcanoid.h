@@ -4,12 +4,11 @@
 #include "ui_Arcanoid.h"
 #include <QGraphicsView>
 
-class Arcanoid : public QMainWindow
-{
-	Q_OBJECT
+class Arcanoid : public QMainWindow {
+  Q_OBJECT
 
 public:
-	Arcanoid(QWidget *parent = Q_NULLPTR);
+  Arcanoid(QWidget *parent = Q_NULLPTR);
   ~Arcanoid();
 
 private:
