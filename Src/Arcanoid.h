@@ -13,6 +13,6 @@ public:
   ~Arcanoid();
 
 private:
-	Ui::ArcanoidClass* _ui;
+  Ui::ArcanoidClass* _ui;
   QGraphicsScene* _scene;
 };
