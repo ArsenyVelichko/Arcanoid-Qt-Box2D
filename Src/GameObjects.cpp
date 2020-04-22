@@ -124,8 +124,14 @@ Ball::Ball(const Ball& other) {
   _maxSpeed = other._maxSpeed;
 }
 
-void Ball::reflect(const QVector2D normal) {
-  _direct = _direct - 2 * QVector2D::dotProduct(_direct, normal) * normal;
+bool Ball::reflect(const QVector2D normal) {
+  double dot = QVector2D::dotProduct(_direct, normal);
+
+  if (dot < 0) {
+    _direct = _direct - 2 * dot * normal;
+    return true;
+  }
+  return false;
 }
 
 QRectF Ball::boundingRect() const {
@@ -219,9 +225,10 @@ void Block::processBall(Ball& ball) {
   HitRecord record;
 
   AabbVsBallIntersect(ball, *this, record);
-  ball.reflect(record.normal);
-  ball.changeCenter(record.touchPoint + record.normal.toPointF() * ball.radius());
-  ball.setPos(flipY(ball.center()));
+  if (ball.reflect(record.normal)) {
+    ball.changeCenter(record.touchPoint + record.normal.toPointF() * ball.radius());
+    ball.setPos(flipY(ball.center()));
+  }
 
   if (_type == BlockType::ACCELERATING) {
     ball.accelerate(0.5);

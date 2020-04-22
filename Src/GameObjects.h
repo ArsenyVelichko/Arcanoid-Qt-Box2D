@@ -36,7 +36,7 @@ public:
   QVector2D direct() const { return _direct; }
   double currSpeed() const { return _currSpeed; }
 
-  void reflect(const QVector2D normal);
+  bool reflect(const QVector2D normal);
   void setSpeedToNormal() { _currSpeed = _normalSpeed; }
   bool isMoving() { return _currSpeed != 0; }
   void move() { _center += _direct.toPointF() * _currSpeed; }
