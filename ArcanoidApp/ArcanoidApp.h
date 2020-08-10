@@ -7,7 +7,7 @@ class ArcanoidApp : public QMainWindow {
   Q_OBJECT
 
 public:
-  ArcanoidApp(QWidget *parent = Q_NULLPTR);
+  ArcanoidApp(QWidget* parent = Q_NULLPTR);
 
 private:
   Ui::ArcanoidAppClass ui;
