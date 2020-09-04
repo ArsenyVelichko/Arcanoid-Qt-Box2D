@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/Levels">
+        <file alias="Level1">Levels/Level1.txt</file>
+    </qresource>
+    <qresource prefix="/Textures">
+        <file alias="DefeatImage">Textures/DefeatImage.png</file>
+        <file alias="VictoryImage">Textures/VictoryImage.png</file>
+        <file alias="Heart">Textures/Heart.png</file>
+    </qresource>
+</RCC>
