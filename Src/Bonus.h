@@ -40,7 +40,7 @@ protected:
 
 class DoubleBall : public Bonus {
 public:
-  DoubleBall(QList<Ball*>&& m_ballList, BonusManager* manager);
+  DoubleBall(QList<Ball*>& m_ballList, BonusManager* manager);
 
   void activate() override;
 
@@ -50,12 +50,12 @@ private:
 
 class AccelerateBall : public Bonus {
 public:
-  AccelerateBall(float acceleration, QList<Ball*>&& ballList, BonusManager* manager);
+  AccelerateBall(float acceleration, const QList<Ball*>& ballList, BonusManager* manager);
 
   void activate() override;
 
 private:
-  QList<Ball*>& m_ballList;
+  const QList<Ball*>& m_ballList;
   float m_acceleration;
 };
 
@@ -85,12 +85,12 @@ private:
 
 class RandomDirect : public TmpBonus {
 public:
-  RandomDirect(float probability, QList<Ball*>&& ballList, float duration, BonusManager* manager);
+  RandomDirect(float probability, const QList<Ball*>& ballList, float duration, BonusManager* manager);
 
   void update() override;
 
 private:
-  QList<Ball*>& m_ballList;
+  const QList<Ball*>& m_ballList;
   float m_probability;
 
   void changeDirect() const;

@@ -44,7 +44,7 @@ Bonus::Bonus(BonusManager* manager) {
   m_isDeleted = false;
 }
 
-DoubleBall::DoubleBall(QList<Ball*>&& ballList, BonusManager* manager)
+DoubleBall::DoubleBall(QList<Ball*>& ballList, BonusManager* manager)
   : m_ballList(ballList), Bonus(manager) {}
 
 void DoubleBall::activate() {
@@ -79,7 +79,7 @@ void AddBottom::activate() {
   m_isDeleted = true;
 }
 
-AccelerateBall::AccelerateBall(float acceleration, QList<Ball*>&& ballList,
+AccelerateBall::AccelerateBall(float acceleration, const QList<Ball*>& ballList,
                                BonusManager* manager)
   : m_ballList(ballList), Bonus(manager) {
   m_acceleration = acceleration;
@@ -111,7 +111,7 @@ void TmpBonus::update() {
   }
 }
 
-RandomDirect::RandomDirect(float probability, QList<Ball*>&& ballList,
+RandomDirect::RandomDirect(float probability, const QList<Ball*>& ballList,
                            float duration, BonusManager* manager)
   : m_ballList(ballList), TmpBonus(duration, manager) {
   m_probability = probability;

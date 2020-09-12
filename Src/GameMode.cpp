@@ -119,7 +119,7 @@ Bonus* GameMode::createBonus(char type) {
 
   switch (type) {
   case 'D':
-    bonus = new DoubleBall(std::move(m_ballList), manager);
+    bonus = new DoubleBall(m_ballList, manager);
     break;
 
   case 'B':
@@ -127,7 +127,7 @@ Bonus* GameMode::createBonus(char type) {
     break;
 
   case 'A':
-    bonus = new AccelerateBall(50.0f, std::move(m_ballList), manager);
+    bonus = new AccelerateBall(50.0f, m_ballList, manager);
     break;
 
   case 'S':
@@ -135,7 +135,7 @@ Bonus* GameMode::createBonus(char type) {
     break;
 
   case 'R':
-    bonus = new RandomDirect(0.004f, std::move(m_ballList), 5.0f, manager);
+    bonus = new RandomDirect(0.004f, m_ballList, 5.0f, manager);
     break;
 
   case 'E':

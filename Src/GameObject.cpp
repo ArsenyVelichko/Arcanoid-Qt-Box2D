@@ -30,6 +30,10 @@ void GameObject::advance(int phase) {
     QGraphicsItem::setPos(pos);
     float angle = qRadiansToDegrees(m_body->GetAngle());
     QGraphicsItem::setRotation(angle);
+
+    if (m_constSpeedFlag) {
+      setSpeedToConst();
+    }
   }
 }
 
@@ -65,12 +69,6 @@ void GameObject::setSpeedToConst() const {
 
   if (abs(diffSpeed) > g_speedEpsilon) {
     m_body->SetLinearVelocity(m_constSpeed * currVelocity);
-  }
-}
-
-void GameObject::endContact(GameObject* other, b2Contact* contact) {
-  if (m_constSpeedFlag) {
-    setSpeedToConst();
   }
 }
 

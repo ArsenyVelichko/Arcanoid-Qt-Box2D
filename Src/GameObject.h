@@ -11,7 +11,7 @@ public:
   GameObject(WorldScene* worldScene);
 
   virtual void beginContact(GameObject* other, b2Contact* contact) {}
-  virtual void endContact(GameObject* other, b2Contact* contact);
+  virtual void endContact(GameObject* other, b2Contact* contact) {}
   virtual void preSolve(GameObject* other, b2Contact* contact) {}
 
   virtual QString getTag() const;
